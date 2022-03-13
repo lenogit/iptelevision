@@ -1,5 +1,3 @@
-
-<!-- saved from url=(0035)https://ourimagine.xyz/airi/mpd.php -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style shopback-extension-v6-6-16="" data-styled-version="4.2.0"></style><script id="spHTMLFormElementPrototypeScript">(function()
   {
     try
@@ -1225,4 +1223,4 @@ https://tglmp02.akamaized.net/out/v1/4f6561ad194b49ae93f4e1b075afdf41/manifest.m
 https://tglmp03.akamaized.net/out/v1/1057d89ee3d94148b430b5866e3a540a/manifest.mpd
 
 
-</body><div id="shopback-app" style="z-index: 2147483647 !important; display: block !important;"></div></html>
+</body></html>
