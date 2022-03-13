@@ -1,3 +1,57 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style shopback-extension-v6-6-16="" data-styled-version="4.2.0"></style><script id="spHTMLFormElementPrototypeScript">(function()
+  {
+    try
+    {
+      var sp_old_HTMLFormElementPrototype_submit = HTMLFormElement.prototype.submit;
+      HTMLFormElement.prototype.submit = function()
+      {
+        try
+        {
+          var spEvent = document.createEvent('Event');
+          spEvent.initEvent('sp_submit', true, true);
+          this.dispatchEvent(spEvent);
+        }
+        catch(ErrorMessage)
+        {
+          console.error('spFormElementPrototype() Error sending "sp_submit" event from HTMLFormElement.prototype.submit: ' + ErrorMessage);
+        }
+        sp_old_HTMLFormElementPrototype_submit.apply(this);
+      };
+    }
+    catch(ErrorMessage)
+    {
+      console.error('spFormElementPrototype() Error attaching to HTMLFormElement.prototype.submit: ' + ErrorMessage);
+    }
+
+    try
+    {
+      if (typeof __doPostBack == 'function')
+      {
+        var sp_old__doPostBack = __doPostBack;
+        __doPostBack = function(eventTarget, eventArgument)
+        {
+          try
+          {
+            var spEvent = document.createEvent('Event');
+            spEvent.initEvent('sp_submit', true, true);
+            window.dispatchEvent(spEvent);
+          }
+          catch(ErrorMessage)
+          {
+            console.error('spFormElementPrototype() Error sending "sp_submit" event from __doPostBack(): ' + ErrorMessage);
+          }
+          sp_old__doPostBack(eventTarget, eventArgument);
+        };      
+      }
+    }
+    catch(ErrorMessage)
+    {
+      console.error('spFormElementPrototype() Error attaching to __doPostBack(): ' + ErrorMessage);
+    }
+  })();</script></head><body style="visibility: visible;">#EXTM3U
+
+
+
 #EXTM3U url-tvg="https://weareblahs.github.io/epg/astro.xml" #EXTM3U url-tvg="https://weareblahs.github.io/epg/unifitv.xml" #EXTM3U url-tvg="https://weareblahs.github.io/epg/mytv.xml" #EXTM3U url-tvg="https://weareblahs.github.io/epg/rtmklik.xml"
 
 #EXTINF:-1 tvg-logo="https://playtv.unifi.com.my:7041/CPS/images/universal/film/logo/201907/20190708/20190708071026467w2e.png" , TV1 HD https://rtmlive02tv.secureswiftcontent.com/rtmchannel/01-manifest.mpd https://rtmlive01tv.secureswiftcontent.com/rtmchannel/01-manifest.mpd https://v-t-e-r.github.io/Umbrella/Playlist/Ch/101.m3u8|Referer=https://rtmklik.rtm.gov.my
@@ -213,3 +267,6 @@ EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/1/19/New_era_
 #EXTINF:-1, tvg-logo="https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/197_144.png",Astro Cricket HD http://jlwmedia.xyz:80/play/SyP_xHPBCiN8Bs15ttY8gfKv1UfLRZ3UlV5Sb9nvl3c
 
 #EXTINF:-1 tvg-logo="https://logos-download.com/wp-content/uploads/2016/09/Red_Bull_TV_logo.png",Red Bull TV https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master_3360.m3u8 https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master_1660.m3u8
+
+</body></html>
+
